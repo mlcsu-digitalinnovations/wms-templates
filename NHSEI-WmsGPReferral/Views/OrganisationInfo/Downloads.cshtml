@@ -1,0 +1,50 @@
+﻿@model DownloadsModel
+@{
+    ViewData["Title"] = "Downloads";
+    var chosenSystem = Model.ChosenClinicalSystem;
+}
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+        <div class="nhsuk-card wms-card">
+            <div class="nhsuk-card__content">
+                <h1 class="nhsuk-card__heading nhsuk-label--l">
+                    Template for @chosenSystem
+                </h1>
+
+                @foreach (var system in Model.DownloadDictionary.Where(x => x.Key == chosenSystem))
+                {
+                    var displaylink = system.Key + " " + Model.FileVersion;
+                    var ext = Model.FileVersion == "" ? "" : Model.FileVersion + ".zip";
+                    var downloadlink = system.Value.Url + ext;
+                    <p><a href="@downloadlink">Download template for @displaylink</a> (.zip)</p>
+                    @Html.Raw(system.Value.Instructions)
+
+                }
+                <p>Please do not <strong><u>alter</u></strong> this Referral Form and contact your local Data Quality team if you need any support / advice.</p>
+                <p>After you have downloaded the file, you may close this site.</p>
+                @if (Model.SelectedRole == "practice")
+                {
+                    <div id="other-downloads">
+                        <details class="nhsuk-details">
+                            <summary class="nhsuk-details__summary">
+                                <span class="nhsuk-details__summary-text">
+                                    Wrong system?
+                                </span>
+                            </summary>
+                            <div class="nhsuk-details__text">
+                                <ul>
+                                    @foreach (var system in Model.DownloadDictionary.Where(x => x.Key != chosenSystem && x.Value.Role == Model.SelectedRole))
+                                    {
+                                        <li><a href="@system.Value.Url">Download template for @system.Key</a></li>
+                                    }
+                                </ul>
+
+                            </div>
+                        </details>
+                    </div>
+                }
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,26 @@
+﻿@model ErrorViewModel
+@{
+    ViewData["Title"] = "Error";
+}
+
+
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+        <div class="nhsuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1">
+            <h1 class="nhsuk-error-summary__title" id="error-summary-title">
+                There is a problem
+            </h1>
+            <p><strong>@Model.Message</strong></p>
+
+            <div class="nhsuk-error-summary__body">
+                <p>If you are experiencing any technical issues with the Template site, please contact your local Data Quality Team or Primary Care IT support team.</p>
+                
+                @if (Model.ShowRequestId)
+                {
+                    <p><strong>Reference: @Model.RequestId</strong></p>
+                }
+
+            </div>
+        </div>
+    </div>
+</div>
