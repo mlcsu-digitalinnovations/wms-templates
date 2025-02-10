@@ -1,0 +1,60 @@
+﻿@model PracticeDataModel
+@{
+    ViewData["Title"] = "Confirm practice details";
+}
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+
+        <div class="nhsuk-back-link">
+            <a class="nhsuk-back-link__link" asp-controller="OrganisationInfo" asp-action="Index">
+                <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+                </svg>
+                Go back
+            </a>
+        </div>
+
+
+        <div class="nhsuk-card wms-card">
+            <div class="nhsuk-card__content">
+                <h1 class="nhsuk-card__heading nhsuk-label--l">
+                    Confirm organisation details
+                </h1>
+                <dl class="nhsuk-summary-list">
+
+                    <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key">
+                            ODS code
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            @Model.OdsCode
+                        </dd>
+
+                    </div>
+
+                    <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key">
+                            Organisation name
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            @Model.OrganisationName
+                        </dd>
+
+                    </div>
+
+                </dl>
+
+                <form method="post"
+                      asp-controller="OrganisationInfo"
+                      asp-action="CheckExistingRecords"
+                      asp-route-id="Model.OdsCode">
+                    <input type="hidden" asp-for="OdsCode" value="@Model.OdsCode" />
+                    <input type="hidden" asp-for="OrganisationName" value="@Model.OrganisationName" />
+                    <input type="submit" value="Confirm organisation details" class="nhsuk-button" />
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>

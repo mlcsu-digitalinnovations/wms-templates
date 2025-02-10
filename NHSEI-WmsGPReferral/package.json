@@ -1,0 +1,19 @@
+{
+  "author": "",
+  "dependencies": {
+    "nhsuk-frontend": "^8.2.0",
+    "sass": "^1.77.6"
+  },
+  "description": "",
+  "keywords": [],
+  "license": "ISC",
+  "main": "index.js",
+  "name": "NHSEI-WmsGPReferral",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-css": "sass wwwroot/css/main.scss wwwroot/css/main.css",
+    "build-minified-css": "sass wwwroot/css/main.scss wwwroot/css/main.min.css --style=compressed",
+    "update-and-build": "npm run build-css && npm run build-minified-css"
+  },
+  "version": "1.0.0"
+}

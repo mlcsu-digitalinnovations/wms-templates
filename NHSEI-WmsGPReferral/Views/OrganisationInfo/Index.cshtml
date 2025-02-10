@@ -1,0 +1,36 @@
+﻿@using NHSEI_WmsGPReferral.Models
+@using NHSEI_WmsGPReferral.CustomClasses
+@model OdsModel
+
+@{
+    ViewData["Title"] = "Enter ODS";
+    bool hasErrors = ViewData.ModelState.ErrorCount > 0;
+}
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+        <div class="nhsuk-card wms-card">
+            <div class="nhsuk-card__content">
+                <form method="post">
+                    <fieldset class="nhsuk-fieldset nhsuk-u-padding-bottom-6"
+                              aria-describedby="ods-code-hint">
+                        <div class="@NhsFormHelper.GetFormElementClasses("form-group", hasErrors)">
+                            <h1 class="nhsuk-label-wrapper">
+                                <label class="nhsuk-label nhsuk-label--l" asp-for="OdsCode">
+                                </label>
+                            </h1>
+                            <div class="nhsuk-hint" id="ods-code-hint">
+                                Enter your organisation ODS code
+                            </div>
+                            <span class="nhsuk-error-message" id="input-with-error-message-error">
+                                <span class="nhsuk-u-visually-hidden">Error:</span> <span asp-validation-for="OdsCode"></span>
+                            </span>
+                            <input class="@NhsFormHelper.GetFormElementClasses("text", hasErrors) nhsuk-input--width-5" type="text" asp-for="OdsCode">
+                        </div>
+                    </fieldset>
+
+                    <input type="submit" value="Continue" class="nhsuk-button" />
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

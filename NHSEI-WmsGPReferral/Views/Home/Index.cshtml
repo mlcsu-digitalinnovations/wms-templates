@@ -1,0 +1,29 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+        <h1>Welcome</h1>
+
+        @*<p>The Weight Management Template download site is temporarily unavailable while we make some changes.
+        </p>
+        <p>In the meantime, please contact <a href="mailto:england.wms-prevention@nhs.net">england.wms-prevention@nhs.net</a> if you need the templates required for the service.
+        </p>*@
+
+        <p>This service is for GP and Pharmacies in England only and is to support referrals into the NHS Digital Weight Management Programme.</p>
+        <p>You will require your ODS code to access these templates.</p>
+        <h3>For GP practices</h3>
+        <p>To download a template for your clinical system (EMIS, SytmOne or Vision).</p>
+        <h3>Pharmacies</h3>
+        <p>To download template documents for the pharmacy referral.</p>
+        <div class="nhsuk-action-link">
+            <a class="nhsuk-action-link__link" asp-action="index" asp-controller="OrganisationInfo">
+                <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+                </svg>
+                <span class="nhsuk-action-link__text">Find templates/downloads</span>
+            </a>
+        </div>
+    </div>
+</div>
