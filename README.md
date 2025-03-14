@@ -1,20 +1,10 @@
-# Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+# WMS Templates
 
-# Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
+WMS Templates is a web site that forms part of the Digital Weight Management Hub. It enables GP practices to download a template for their clinical system (EMIS, SystmOne or Vision) and pharmacies to download a referral template pack including guidance on how to complete the template for a successful referral.
 
-# Build and Test
-TODO: Describe and show how to build your code and run the tests. 
+## Authors
+Midlands and Lancashire CSU Digital Innovation Unit (mlcsu.digitalinnovations@nhs.net)
 
-# Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
+## License
 
-If you want to learn more about creating good readme files then refer the following [guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/git/create-a-readme?view=azure-devops). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+This project is licensed under the MIT License - see the LICENSE.md file for details
